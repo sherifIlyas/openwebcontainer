@@ -7,7 +7,7 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"compile": "tsc --project tsconfig.json",
-		"build:worker": "mkdir -p src/generated && BUILD_TARGET=worker tsup",
+		"build:worker": "powershell -Command \"if (!(Test-Path src/generated)) { New-Item -ItemType Directory -Force -Path src/generated }\" && set BUILD_TARGET=worker && tsup",
 		"build:main": "tsup",
 		"build": "pnpm build:worker && pnpm build:main",
 		"clean": "rimraf dist",
@@ -23,17 +23,16 @@
 	],
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
 			"require": "./dist/index.js"
 		},
 		"./worker-code": {
+			"types": "./dist/worker-code.d.ts",
 			"import": "./dist/worker-code.js",
 			"require": "./dist/worker-code.cjs"
 		}
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
 	"dependencies": {
 		"@jitl/quickjs-asmjs-mjs-release-sync": "^0.31.0",
 		"@jitl/quickjs-singlefile-browser-release-asyncify": "^0.31.0",

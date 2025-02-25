@@ -30,8 +30,16 @@ export default function Terminal({ onCommand, output }: TerminalProps) {
 		const fitAddon = new FitAddon();
 		term.loadAddon(fitAddon);
 
-		term.open(terminalRef.current);
-		fitAddon.fit();
+		// Ensure the terminal container is ready and has dimensions
+		const initTerminal = () => {
+			if (!terminalRef.current || !terminalRef.current.offsetWidth || !terminalRef.current.offsetHeight) {
+				requestAnimationFrame(initTerminal);
+				return;
+			}
+			term.open(terminalRef.current);
+			fitAddon.fit();
+		};
+		initTerminal();
 
 		term.onKey(({ key, domEvent }) => {
 			// Pass raw input to the process
@@ -89,7 +97,7 @@ export default function Terminal({ onCommand, output }: TerminalProps) {
 		const newOutput = output.slice(lastOutputLengthRef.current);
 		lastOutputLengthRef.current = output.length;
 
-		newOutput.forEach((line) => {
+		newOutput.forEach(line => {
 			if (line.length > 0) {
 				xtermRef.current?.write(line);
 			}

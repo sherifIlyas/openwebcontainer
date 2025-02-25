@@ -2,8 +2,6 @@
 
 A browser-based virtual container runtime that enables server-like JavaScript execution environments directly in the browser. OpenWebContainer provides a sandboxed environment with a virtual file system, process management, and shell capabilities, making it possible to run server-side JavaScript applications entirely in the browser.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## 🗺️ Architecture Overview
 
@@ -137,12 +135,6 @@ The architecture consists of three main layers:
 - pnpm (v8 or higher)
 - Git
 
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/thecodacus/OpenWebContainer.git
-cd OpenWebContainer
 
 # Install dependencies
 pnpm install
@@ -255,33 +247,6 @@ pnpm version-packages # Update versions
 pnpm release         # Publish to npm
 ```
 
-## 🛠️ Contributing
-
-We welcome contributions! See our [Contributing Guide](CONTRIBUTING.md) for details on:
-- Development workflow
-- Project structure
-- Testing guidelines
-- Pull request process
-
-### Areas for Contribution
-
-- Shell command improvements
-  - Add pipe (`|`) support
-  - Additional built-in commands
-  - Command argument parsing
-- Process management enhancements
-  - Process signals
-  - Job control
-  - Process groups
-- Network features
-  - HTTP request simulation
-  - WebSocket support
-  - Network isolation
-- Developer tools
-  - Debugging capabilities
-  - Process inspection
-  - Performance monitoring
-
 ## 📝 Roadmap
 
 Current focus areas:
@@ -296,20 +261,3 @@ Future plans:
 - [ ] Add signal handling (SIGTERM, SIGKILL, etc.)
 - [ ] Create process groups and job control
 - [ ] Create development tools and debugging capabilities
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Acknowledgments
-
-- [QuickJS](https://bellard.org/quickjs/) - The JavaScript engine used in this project
-- [quickjs-emscripten](https://github.com/justjake/quickjs-emscripten) - WebAssembly build of QuickJS
-
-## 💬 Support
-
-- Create an issue for bug reports or feature requests
-
-
-## Similar Projects
-- [Nano Web IDE](https://github.com/anbraten/nano-web-ide)
