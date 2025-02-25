@@ -50,21 +50,6 @@ The architecture consists of three main layers:
   - Isolated contexts
   - Console output integration
 
-### 🚧 In Progress
-
-- **Network Simulation**
-  - Web Worker based network interceptor
-  - HTTP request handling
-  - Sandbox security
-
-### 📋 Upcoming Features
-
-- Additional shell commands
-- NPM package manager simulation
-- Process signals (SIGTERM, SIGKILL, etc.)
-- Pipe operator (`|`) support
-- WebSocket simulation
-
 ## 🚀 Features
 
 - **Virtual File System**
@@ -247,17 +232,3 @@ pnpm version-packages # Update versions
 pnpm release         # Publish to npm
 ```
 
-## 📝 Roadmap
-
-Current focus areas:
-- [ ] Network simulation implementation
-- [ ] NPM package manager integration
-- [ ] Additional shell commands
-- [ ] WebSocket support
-
-Future plans:
-- [ ] Add pipe support for shell commands
-- [ ] Implement environment variables
-- [ ] Add signal handling (SIGTERM, SIGKILL, etc.)
-- [ ] Create process groups and job control
-- [ ] Create development tools and debugging capabilities
